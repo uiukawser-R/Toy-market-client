@@ -1,8 +1,13 @@
+import ShopByCategory from "../ShopByCategory";
 
 const Home = () => {
     return (
-        <div>
-            <h3 className="text-green-500">this is home</h3>
+        <div className="mt-10">
+            <section>
+                {
+                    <ShopByCategory></ShopByCategory>
+                }
+            </section>
         </div>
     );
 };

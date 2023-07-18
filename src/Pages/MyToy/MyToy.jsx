@@ -8,7 +8,7 @@ const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [myToy, setMyToy] = useState([]);
 
-    const url = `http://localhost:5000/toys?email=${user?.email}`;
+    const url = `https://toy-market-server-neon.vercel.app/toys?email=${user?.email}`;
 
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const MyToy = () => {
         const proceed= confirm('Are you want to sure want to delete')
 
         if(proceed){
-            fetch(`http://localhost:5000/toys/${id}`,{
+            fetch(`https://toy-market-server-neon.vercel.app/toys/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())

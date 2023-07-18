@@ -30,6 +30,7 @@ const SignUp = () => {
             console.log(user);
         })
         .catch(error=>console.log(error))
+        alert('Seccessfull! Now Login Please.')
     }
 
 

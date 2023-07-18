@@ -38,7 +38,7 @@ const AddToy = () => {
         }
         console.log(Adding);
 
-        fetch('http://localhost:5000/toys',{
+        fetch('https://toy-market-server-neon.vercel.app/toys',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

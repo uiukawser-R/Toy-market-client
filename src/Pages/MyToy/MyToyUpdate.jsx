@@ -22,7 +22,7 @@ const MyToyUpdate = () => {
         }
         console.log(update);
 
-        fetch(`http://localhost:5000/toys/${_id}`,{
+        fetch(`https://toy-market-server-neon.vercel.app/toys/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

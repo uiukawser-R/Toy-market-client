@@ -41,12 +41,12 @@ const router = createBrowserRouter([
             {
                 path:'update/:id',
                 element:<MyToyUpdate></MyToyUpdate>,
-                loader: ({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({params})=>fetch(`https://toy-market-server-neon.vercel.app/toys/${params.id}`)
             },
             {
                 path:'allToy',
                 element:<AllToy></AllToy>,
-                loader: ()=> fetch ('http://localhost:5000/totalToys')
+                loader: ()=> fetch ('https://toy-market-server-neon.vercel.app/totalToys')
             },
             {
                 path:'blog',
@@ -66,12 +66,12 @@ const router = createBrowserRouter([
         // {
         //     path:'/category/:id',
         //     element:<CategoryToy></CategoryToy>,
-        //     loader: ({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+        //     loader: ({params})=>fetch(`https://toy-market-server-neon.vercel.app/categories/${params.id}`)
         // },
         {
             path:':id',
             element:<CategoryToy></CategoryToy>,
-            loader: ({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+            loader: ({params})=>fetch(`https://toy-market-server-neon.vercel.app/categories/${params.id}`)
         },
       ]
     },
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
             {
                 path:':id',
                 element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+                loader:({params})=>fetch(`https://toy-market-server-neon.vercel.app/toys/${params.id}`)
             }
         ]
     }

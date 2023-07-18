@@ -24,7 +24,7 @@ const AllToy = () => {
 
     console.log(totalToys);
 
-    // const url = 'http://localhost:5000/toys';
+    // const url = 'https://toy-market-server-neon.vercel.app/toys';
 
 
     // useEffect(() => {
@@ -36,7 +36,7 @@ const AllToy = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`http://localhost:5000/toy?page=${currentPage}&limit=${toysPerpage}`);
+            const response = await fetch(`https://toy-market-server-neon.vercel.app/toy?page=${currentPage}&limit=${toysPerpage}`);
 
             const data = await response.json();
             setAllToy(data);
@@ -82,12 +82,12 @@ const AllToy = () => {
             </div>
             {/* Pagination */}
             <div className="pagination">
-                <p>Current Page : {currentPage}</p>
+                <p>Current Page : {currentPage+1}</p>
                 {
                     pageNumber.map(number => <button className="btn" 
                     key={number}
                     onClick={()=>setCurrentPage(number)}
-                    >{number}</button>)
+                    >{number+1}</button>)
                 }
             </div>
         </>

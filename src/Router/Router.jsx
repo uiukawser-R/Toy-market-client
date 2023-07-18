@@ -1,18 +1,91 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../LayOut/Main";
-import Home from "../Pages/Home/Home/Home";
+import CategoryToy from "../Pages/Home/CategoryToy";
+import ToyDetails from "../Pages/Home/ToyDetails";
+import Login from "../Pages/Login/Login";
+import LoginLayOut from "../LayOut/LoginLayOut";
+import ToysLayOut from "../LayOut/ToysLayOut";
+import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./Private/PrivateRoute";
+import AddToy from "../Pages/AddToy/AddToy";
+import MyToy from "../Pages/MyToy/MyToy";
+import MyToyUpdate from "../Pages/MyToy/MyToyUpdate";
+import AllToy from "../Pages/AllToy/AllToy";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
-      path: "/",
+        path:'/',
+        element:<LoginLayOut></LoginLayOut>,
+        children:[
+            {
+                path:'/',
+                element:<Navigate to="/category/1"></Navigate>
+            },
+            {
+                path:'login',
+                element:<Login></Login>
+            },
+            {
+                path:'signup',
+                element:<SignUp></SignUp>
+            },
+            {
+                path:'addtoy',
+                element:<AddToy></AddToy>
+            },
+            {
+                path:'mytoy',
+                element:<PrivateRoute><MyToy></MyToy></PrivateRoute>,
+            },
+            {
+                path:'update/:id',
+                element:<MyToyUpdate></MyToyUpdate>,
+                loader: ({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+            },
+            {
+                path:'allToy',
+                element:<AllToy></AllToy>,
+                loader: ()=> fetch ('http://localhost:5000/totalToys')
+            },
+            {
+                path:'blog',
+                element:<Blog></Blog>
+            }
+            
+        ]
+    },
+
+
+
+    {
+      path: 'category',
       element: <Main></Main>,
       children:[
+        
+        // {
+        //     path:'/category/:id',
+        //     element:<CategoryToy></CategoryToy>,
+        //     loader: ({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+        // },
         {
-            path:'/',
-            element:<Home></Home>
-        }
+            path:':id',
+            element:<CategoryToy></CategoryToy>,
+            loader: ({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+        },
       ]
     },
+    {
+        path:'toys',
+        element:<ToysLayOut></ToysLayOut>,
+        children:[
+            {
+                path:':id',
+                element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+            }
+        ]
+    }
   ]);
 
 

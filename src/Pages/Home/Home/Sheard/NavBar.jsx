@@ -85,11 +85,11 @@ const NavBar = () => {
                 <img style={{ height: '50px', width: '50px' }} className=' rounded-full p-1' src={user?.photoURL} alt="" />
              
              </Tippy>
-            <button className="btn btn-info" onClick={handleLogOut}>LogOut</button>
+            <button className="btn btn-info btn-sm" onClick={handleLogOut}>LogOut</button>
             </>
             :
                 <Link to="/login">
-                    <button className="btn btn-info">Login</button>
+                    <button className="btn btn-info btn-sm">Login</button>
                 </Link>}
             </div>
         </div>

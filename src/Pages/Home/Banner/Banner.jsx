@@ -1,7 +1,7 @@
-import img1 from '../../../assets/img1.png'
-import img2 from '../../../assets/img2.png'
-import img3 from '../../../assets/img3.png'
-import img4 from '../../../assets/img4.png'
+import img1 from '../../../assets/img7.png'
+import img2 from '../../../assets/img5.png'
+import img3 from '../../../assets/img6.png'
+import img4 from '../../../assets/img2.png'
 
 const Banner = () => {
     return (
@@ -10,7 +10,7 @@ const Banner = () => {
                 <img src={img1} className="w-full rounded-xl" />
                 <div className="absolute flex items-center h-full rounded-xl  left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2'> 
-                        <h2 className='text-5xl font-bold'>Educational and learning Toys</h2>
+                        <h2 className='md:text-5xl text-2xl font-bold'>Educational and learning Toys</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, earum asper</p>
                         <div>
                             

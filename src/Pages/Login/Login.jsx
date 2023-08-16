@@ -6,6 +6,7 @@ import { FaGoogle } from "react-icons/fa";
 import { getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import useTitle from "../../hooks/useTitle";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -35,7 +36,14 @@ const Login = () => {
                 navigate(from, {replace:true})
             })
             .catch(error => console.log(error))
-            alert('Seccessful!')
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'login successfull',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              
     }
 
 

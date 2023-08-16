@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2';
 const SignUp = () => {
     useTitle("SignUp")
 
     const {createUser,loading}=useContext(AuthContext);
+    const navigate=useNavigate();
+
 
     if(loading){
         
@@ -28,9 +31,18 @@ const SignUp = () => {
         .then(result=>{
             const user=result.user;
             console.log(user);
+            navigate('/')
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'successfull',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              
         })
         .catch(error=>console.log(error))
-        alert('Seccessfull! Now Login Please.')
+      
     }
 
 

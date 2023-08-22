@@ -64,7 +64,7 @@ const AddToy = () => {
 
 
     return (
-        <div>
+        <div className="bg-slate-200 mt-5 p-5">
            <div>
             <h2 className="text-center text-3xl">Add A Toy</h2>
             <form  onSubmit={handleAddToy}>
@@ -134,7 +134,7 @@ const AddToy = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Add Now" />
+                    <input className="btn bg-sky-400 hover:bg-sky-500 btn-block" type="submit" value="Add Now" />
                 </div>
             </form>
             <div className="hero min-h-screen bg-base-200">

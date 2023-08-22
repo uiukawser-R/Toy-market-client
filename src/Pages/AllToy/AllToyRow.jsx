@@ -35,7 +35,7 @@ const AllToyRow = ({toy}) => {
           
           
           <>
-          <Link to={`/toys/${_id}`}><button className="btn btn-primary btn-sm mb-1 w-15">View Details</button></Link>
+          <Link to={`/toys/${_id}`}><button className="btn bg-sky-400 hover:bg-sky-500 btn-sm mb-1 w-15">View Details</button></Link>
           </>
           
         </th>

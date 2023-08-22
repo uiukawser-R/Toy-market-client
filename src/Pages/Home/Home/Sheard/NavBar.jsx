@@ -9,34 +9,38 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 const NavBar = () => {
-    const {user,logOut}=useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const navItems = (
         <>
             <li className="font-bold">
                 <Link to="/category/1">Home</Link>
             </li>
             <li className="font-bold"> <Link to='/blog'>Blog </Link></li>
-            {user?.email? 
-        <>
-        
-        <li className="font-bold"> <Link to="/allToy">All Toy</Link></li>
-        <li className="font-bold"> <Link to="/mytoy">My Toy</Link></li>
-        <li className="font-bold"> <Link to="/addtoy">Add a Toy</Link></li>
-        
-        
-        </>
-        :
-        <></>}
+            {user?.email ?
+                <>
+
+                    <li className="font-bold"> <Link to="/allToy">All Toy</Link></li>
+                    <li className="font-bold"> <Link to="/mytoy">My Toy</Link></li>
+                    <li className="font-bold"> <Link to="/addtoy">Add a Toy</Link></li>
+
+
+                </>
+                :
+                <>
+                                    <li className="font-bold"> <Link to="/allToy">All Toy</Link></li>
+                    <li className="font-bold"> <Link to="/mytoy">My Toy</Link></li>
+                    <li className="font-bold"> <Link to="/addtoy">Add a Toy</Link></li>
+                </>}
         </>
     );
 
 
     const handleLogOut = () => {
         logOut()
-        .then(() =>{
-            
-        })
-        .catch( error => console.log(error))
+            .then(() => {
+
+            })
+            .catch(error => console.log(error))
     }
 
 
@@ -77,20 +81,20 @@ const NavBar = () => {
             </div>
             <div className="navbar-end">
 
-            {user ? 
-            <>
-            {/* <img style={{ height: '50px', width: '50px' }} className='rounded-full p-1' src={user?.photoURL} alt="" /> */}
-            <Tippy  content={user.displayName}>
-           
-                <img style={{ height: '50px', width: '50px' }} className=' rounded-full p-1' src={user?.photoURL} alt="" />
-             
-             </Tippy>
-            <button className="btn btn-info btn-sm" onClick={handleLogOut}>LogOut</button>
-            </>
-            :
-                <Link to="/login">
-                    <button className="btn btn-info btn-sm">Login</button>
-                </Link>}
+                {user ?
+                    <>
+                        {/* <img style={{ height: '50px', width: '50px' }} className='rounded-full p-1' src={user?.photoURL} alt="" /> */}
+                        <Tippy content={user.displayName}>
+
+                            <img style={{ height: '50px', width: '50px' }} className=' rounded-full p-1' src={user?.photoURL} alt="" />
+
+                        </Tippy>
+                        <button className="btn btn-info btn-sm" onClick={handleLogOut}>LogOut</button>
+                    </>
+                    :
+                    <Link to="/login">
+                        <button className="btn btn-info btn-sm">Login</button>
+                    </Link>}
             </div>
         </div>
     );

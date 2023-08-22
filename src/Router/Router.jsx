@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'addtoy',
-                element:<AddToy></AddToy>
+                element:<PrivateRoute><AddToy></AddToy></PrivateRoute>
             },
             {
                 path:'mytoy',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'allToy',
-                element:<AllToy></AllToy>,
+                element:<PrivateRoute><AllToy></AllToy></PrivateRoute>,
                 loader: ()=> fetch ('https://toy-market-server-neon.vercel.app/totalToys')
             },
             {

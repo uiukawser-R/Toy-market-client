@@ -46,8 +46,8 @@ const AllToy = () => {
 
     return (
         <>
-            <div>
-                <h2 className="text-center mt-5">Your Toy: <span className="text-orange-500">{allToy.length}</span></h2>
+            <div className="bg-slate-200">
+                <h2 className="text-center mt-5 font-bold text-2xl">Total Toy: <span className="text-orange-500">{allToy.length}</span></h2>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}

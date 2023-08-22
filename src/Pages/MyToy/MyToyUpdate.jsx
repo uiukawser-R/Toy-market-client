@@ -49,7 +49,7 @@ const MyToyUpdate = () => {
     return (
         <div>
         <div>
-         <h2 className="text-center text-3xl">Add A Toy</h2>
+         <h2 className="text-center text-3xl font-bold">UPDATE HERE</h2>
          <form  onSubmit={handleUpdate}>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                  
@@ -81,7 +81,7 @@ const MyToyUpdate = () => {
                
              </div>
              <div className="form-control mt-6">
-                 <input className="btn btn-primary btn-block" type="submit" value="Update Now" />
+                 <input className="btn bg-sky-400 hover:bg-sky-500 btn-block" type="submit" value="Update" />
              </div>
          </form>
          <div className="hero min-h-screen bg-base-200">

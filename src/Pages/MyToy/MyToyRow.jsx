@@ -34,7 +34,7 @@ const MyToyRow = ({toy,handleDelete}) => {
           
           
           <>
-          <Link to={`../update/${_id}`}><button className="btn btn-primary btn-sm mb-1 w-15">Update</button></Link>
+          <Link to={`../update/${_id}`}><button className="btn bg-sky-400 hover:bg-sky-500 btn-sm mb-1 w-15">Update</button></Link>
           <br />
           <button onClick={()=>handleDelete(_id)} className="btn btn-secondary btn-sm w-15">Delete!</button>
           </>
